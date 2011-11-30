@@ -8,7 +8,7 @@ class Form_Article_Edit extends Forms_List
     $this->col('col1')
       ->add('name')
       ->add('rew_id')
-      ->add('timestamp', array ('attr' => array ('class' => 'datetimepicker'), 'value' => date('d.m.Y H:i')))
+      ->add('timestamp', 'datetime', date('d.m.Y H:i'))
       ->add('cms_status', 'bool', array ('value' => TRUE));
       
     $this->col('col2')
