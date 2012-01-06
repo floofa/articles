@@ -16,20 +16,17 @@ class Cms_Controller_Articles extends Controller_Builder_Template_Administration
     ),
   );
   
-  /*
-  protected $_edit_bookmarks = array (
-    'edit' => array (
-      'route' => 'default', 
-      'params' => array ('controller' => TRUE, 'action' => 'edit', 'id' => '{id}')
-    ),
-    'comments' => array (
-      'route' => 'articles-comments', 
-      'params' => array ('id' => '{id}'),
-      'model' => 'comment',
-      'foreign_key' => 'article_id'
-    ),
-  );
-  */
+  public function before()
+  {
+    parent::before();
+    
+    $modules = Kohana::modules();
+    
+    // pokud neni pridan modul s komentari, nezobrazime zalozku pro komentare
+    if ( ! array_key_exists('comments', $modules)) {
+      unset($this->_edit_bookmarks['comments']);
+    }
+  }
   
   public function action_comments()
   {
