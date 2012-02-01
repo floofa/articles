@@ -5,7 +5,7 @@ $config['articles_images']['file_types'] = '*.jpg;*.jpeg;*.png;*.gif;*.bmp';
 $config['articles_images']['file_types_desc'] = 'Obrázky';
 
 $config['thumbs']['articles_images'] = array (
-  's'   => array ('width' => 160, 'height' => 115),
+  's'   => array ('width' => 160, 'height' => 120),
 );
 
 return $config;
